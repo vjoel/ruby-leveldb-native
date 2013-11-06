@@ -92,4 +92,13 @@ class TestIterator < Minitest::Test
     assert_equal 'def', iter.to
     assert iter.reversed?
   end
+  
+  def test_iterator_not_valid
+    iter = db.iterator from: KEYS[-1]
+    assert_nil iter.invalid_reason
+    assert_equal %w{9 9}, iter.next
+    assert_equal -1, iter.invalid_reason
+    assert_equal nil, iter.next
+    assert_equal -1, iter.invalid_reason
+  end
 end
