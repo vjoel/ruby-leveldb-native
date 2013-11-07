@@ -19,11 +19,7 @@ The gem installs in the normal way:
 
     gem install leveldb-native
 
-However, you need to have libleveldb installed. It may be available as part of your OS (from debian repos, for example), or you may prefer to install from source. The source packages from google do not have install scripts, but that is easy to fix. Here is a git repo with the necessary fixes to the makefile:
-
-    https://github.com/vjoel/leveldb
-
-Just follow the instructions in that repo's README to build and install.
+However, you need to have libleveldb installed. It may be available as part of your OS (from debian repos, for example), or you may prefer to install from source. The source packages from google do not have install scripts, but that is easy to fix. Here is a git repo with the necessary fixes to the makefile: https://github.com/vjoel/leveldb. Just follow the instructions in that repo's README to build and install.
 
 FAQ
 ---
