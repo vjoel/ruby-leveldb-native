@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     "test/**/*.rb"
   ]
   s.bindir = 'bin'
+  s.extensions = Dir["ext/**/extconf.rb"]
   s.test_files = Dir["test/*.rb"]
   s.homepage = "https://github.com/vjoel/ruby-leveldb-native"
   s.license = "MIT"
