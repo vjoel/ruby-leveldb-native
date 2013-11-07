@@ -1,0 +1,17 @@
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+ext/**/*.o
+ext/**/*.so
+ext/**/*.log
+ext/**/Makefile
