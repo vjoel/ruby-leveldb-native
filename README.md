@@ -30,19 +30,19 @@ FAQ
 
 1. Why not use the [leveldb gem] (https://github.com/DAddYE/leveldb) instead?
 
-* Doesn't support the full functionality of snapshots. Snapshots in this gem can only be used to switch the state of the DB object, but not act as independent and concurrent readable views of the database at different points in time.
+   * Doesn't support the full functionality of snapshots. Snapshots in this gem can only be used to switch the state of the DB object, but not act as independent and concurrent readable views of the database at different points in time.
 
-* Tries to maintain its own installation of libleveldb, which may be a different version from the system-wide installation.
+   * Tries to maintain its own installation of libleveldb, which may be a different version from the system-wide installation.
 
-* Accesses the lib using FFI, which is slower than ruby's native extension architecture. (See benchmarks at the link above.)
+   * Accesses the lib using FFI, which is slower than ruby's native extension architecture. (See benchmarks at the link above.)
 
 2. Why not use the [leveldb-ruby gem] (https://github.com/wmorgan/leveldb-ruby) instead?
 
-* Not maintained regularly.
+   * Not maintained regularly.
 
-* Tries to maintain its own installation of libleveldb.
+   * Tries to maintain its own installation of libleveldb.
 
-* No snapshots.
+   * No snapshots.
 
 This gem attempts to maintain compatibility with the leveldb-ruby gem, while adding more features.
 
