@@ -52,7 +52,11 @@ Contact
 
 This project is hosted at https://github.com/vjoel/leveldb-native.
 
-Joel VanderWerf, vjoel@users.sourceforge.net.
+Contact Joel VanderWerf:
+
+* vjoel@users.sourceforge.net
+
+* https://twitter.com/JoelVanderWerf
 
 License and Copyright
 ---------------------
