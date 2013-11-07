@@ -15,8 +15,8 @@ module LevelDBNative
                            :error_if_exists => false)
       end
 
-      # Creates a new database stored on disk at +pathname+. Throws an
-      # exception if the database already exists.
+      # Creates a new database stored on disk at +pathname+. Raises
+      # LevelDBNative::Error if the database already exists.
       #
       # See #make for possible options.
       def create pathname, options={}
@@ -25,8 +25,8 @@ module LevelDBNative
                            :error_if_exists => true)
       end
 
-      # Loads a database stored on disk at +pathname+. Throws an
-      # exception unless the database already exists.
+      # Loads a database stored on disk at +pathname+. Raises
+      # LevelDBNative::Error unless the database already exists.
       def load pathname
         make path_string(pathname),
              :create_if_missing => false, :error_if_exists => false
@@ -60,9 +60,9 @@ module LevelDBNative
     def keys; map {|k, v| k} end
     def values; map {|k, v| v} end
 
-    # If called with a block, the snapshot us yielded to the caller, and the
+    # If called with a block, yields a snapshot to the caller, and the
     # snapshot is released after the block finishes. Otherwise, returns a
-    # snapshot and caller is responsible to call #release on the snapshot.
+    # snapshot and caller must call #release on the snapshot.
     def snapshot(*args)
       sn = Snapshot.new self, *args
       if block_given?
