@@ -52,6 +52,12 @@ class TestSnapshot < Minitest::Test
     assert_equal true,  sn.exists?( "k1"  )
     assert_equal true,  db.exists?( "new" )
     assert_equal false, db.exists?( "k1"  )
+
+    sn.release
+    assert_equal true,  sn.exists?( "new" )
+    assert_equal false, sn.exists?( "k1"  )
+    assert_equal true,  db.exists?( "new" )
+    assert_equal false, db.exists?( "k1"  )
   end
 
   def test_release
