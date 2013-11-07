@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.files = Dir[
     "README.md", "LICENSE", "Rakefile",
     "lib/**/*.rb",
-    "ext/**/*.rb",
+    "ext/**/*.{rb,c,cc,h}",
     "bin/**/*.rb",
     "bench/**/*.rb",
     "example/**/*.rb",
