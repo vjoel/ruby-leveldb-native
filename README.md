@@ -36,7 +36,7 @@ FAQ
 
   * Accesses the lib using FFI, which is slower than ruby's native extension architecture. (See benchmarks at the link above.)
 
-2.Why not use the [leveldb-ruby gem] (https://github.com/wmorgan/leveldb-ruby) instead?
+2. Why not use the [leveldb-ruby gem] (https://github.com/wmorgan/leveldb-ruby) instead?
 
   * Not maintained regularly.
 
