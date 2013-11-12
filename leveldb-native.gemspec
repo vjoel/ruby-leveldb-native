@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = Time.now.strftime "%Y-%m-%d"
   s.description = "Ruby binding to LevelDB."
   s.email = "vjoel@users.sourceforge.net"
-  s.extra_rdoc_files = ["README.md", "LICENSE"]
+  s.extra_rdoc_files = Dir["README.md", "LICENSE", "ext/**/*.cc"]
   s.files = Dir[
     "README.md", "LICENSE", "Rakefile",
     "lib/**/*.rb",
