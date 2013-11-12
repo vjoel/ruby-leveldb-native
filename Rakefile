@@ -23,8 +23,8 @@ Rake::TestTask.new :test do |t|
   t.test_files = FileList["test/*.rb"]
 end
 
-desc "Commit, tag, and push repo; build and push gem"
-task :release => "release:is_new_version" do
+desc "Test, commit, tag, and push repo; build and push gem"
+task :release => ["release:is_new_version", :test] do
   require 'tempfile'
   
   sh "gem build #{PRJ}.gemspec"
