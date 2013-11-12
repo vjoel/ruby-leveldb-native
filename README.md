@@ -12,6 +12,22 @@ LevelDB
 
 [LevelDB] (http://code.google.com/p/leveldb/) is a persistent key-value store developed at Google.
 
+Synopsis
+--------
+
+    require 'leveldb-native'
+
+    db = LevelDBNative::DB.new '/tmp/db'
+
+    db["key"] = "value"
+    p db["key"] # "value"
+
+    sn = db.snapshot
+    db["key"] = "new value"
+
+    p db["key"] # "new value"
+    p sn["key"] # "value"
+
 Installation
 ------------
 

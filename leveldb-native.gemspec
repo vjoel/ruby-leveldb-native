@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0")
   s.authors = ["Joel VanderWerf"]
   s.date = Time.now.strftime "%Y-%m-%d"
+  s.summary = "Ruby binding to LevelDB"
   s.description = "Ruby binding to LevelDB."
   s.email = "vjoel@users.sourceforge.net"
   s.extra_rdoc_files = Dir["README.md", "LICENSE", "ext/**/*.cc"]
@@ -28,5 +29,4 @@ Gem::Specification.new do |s|
     "--quiet", "--line-numbers", "--inline-source",
     "--title", "LevelDB Native", "--main", "README.md"]
   s.require_paths = ["lib"]
-  s.summary = "Ruby binding to LevelDB."
 end
