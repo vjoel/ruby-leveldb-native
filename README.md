@@ -28,6 +28,8 @@ Synopsis
     p db["key"] # "new value"
     p sn["key"] # "value"
 
+See also the [example] (example/snapshot.rb).
+
 Installation
 ------------
 
