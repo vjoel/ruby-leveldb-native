@@ -3,6 +3,9 @@ require 'rake/testtask'
 
 PRJ = "leveldb-native"
 
+ext_dir = "ext/#{PRJ}"
+so_name = "leveldb_native.so"
+
 def version
   @version ||= begin
     require 'leveldb-native/version'
@@ -16,8 +19,32 @@ def tag
   @tag ||= "#{PRJ}-#{version}"
 end
 
+desc "Build extension"
+task :ext => File.join(ext_dir, so_name)
+
+file File.join(ext_dir, so_name) => FileList[
+       File.join(ext_dir, "*.{c,cc,h}"),
+       File.join(ext_dir, "Makefile")] do
+  sh "cd #{ext_dir} && make"
+end
+
+file File.join(ext_dir, "Makefile") => File.join(ext_dir, "extconf.rb") do
+  sh "cd #{ext_dir} && ruby extconf.rb"
+end
+
+desc "Clean compiled files"
+task :clean do
+  sh "cd #{ext_dir} && make clean"
+end
+
+desc "Clean compiled files and Makefile"
+task :dist_clean => :clean do
+  sh "cd #{ext_dir} && rm Makefile"
+end
+
+
 desc "Run unit tests"
-Rake::TestTask.new :test do |t|
+Rake::TestTask.new :test => :ext do |t|
   t.libs << "lib"
   t.libs << "ext"
   t.test_files = FileList["test/*.rb"]
