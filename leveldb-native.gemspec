@@ -29,4 +29,6 @@ Gem::Specification.new do |s|
     "--quiet", "--line-numbers", "--inline-source",
     "--title", "LevelDB Native", "--main", "README.md"]
   s.require_paths = ["lib"]
+
+  s.add_development_dependency("minitest", ["~> 5.0"])
 end
