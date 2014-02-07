@@ -79,7 +79,7 @@ Contact Joel VanderWerf:
 License and Copyright
 ---------------------
 
-Copyright (c) 2013, Joel VanderWerf.
+Copyright (c) 2013-2014, Joel VanderWerf.
 
 Portions of ext/leveldb-native/leveldb-native.cc are copyright William Morgan.
 
