@@ -1,3 +1,4 @@
+$:.push File.expand_path("../lib", __FILE__)
 require 'leveldb-native/version'
 
 Gem::Specification.new do |s|
@@ -31,4 +32,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_development_dependency("minitest", ["~> 5.0"])
+  s.add_development_dependency("rake", ">= 0.9")
 end
