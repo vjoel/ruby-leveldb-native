@@ -1,3 +1,4 @@
+$:.push File.expand_path("../lib", __FILE__)
 require 'leveldb-native/version'
 
 Gem::Specification.new do |s|
