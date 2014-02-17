@@ -12,7 +12,5 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-ext/**/*.o
-ext/**/*.so
-ext/**/*.log
-ext/**/Makefile
+lib/**/*.so
+lib/**/*.bundle
