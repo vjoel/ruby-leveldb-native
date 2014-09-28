@@ -7,6 +7,8 @@ A ruby binding to levelDB. It is native in two senses:
 
 2. Uses the natively installed libleveldb, rather than trying to build and install libleveldb as part of the gem.
 
+**Please consider using [LMDB](http://symas.com/mdb/) with the [ruby bindings](https://github.com/minad/lmdb) instead. It's more suitable for most purposes.**
+
 LevelDB
 -------
 
