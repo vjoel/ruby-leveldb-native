@@ -660,7 +660,11 @@ static void bound_snapshot_mark(bound_snapshot* b_sn) {
 }
 
 static void bound_snapshot_free(bound_snapshot* b_sn) {
+#ifndef RBX_CAPI_RUBY_H
   if (b_sn->snapshot && rb_during_gc()) {
+#else
+  if (b_sn->snapshot) {
+#endif
     bound_db* b_db;
     Data_Get_Struct(b_sn->v_db, bound_db, b_db);
     b_db->db->ReleaseSnapshot(b_sn->snapshot);
@@ -668,6 +672,8 @@ static void bound_snapshot_free(bound_snapshot* b_sn) {
   // If not rb_during_gc, then ruby vm is finalizing, and db either has been freed
   // (in which case we can't call ReleaseSnapshot) or is about to be freed (in which
   // case we don't need to).
+  // This is (most likely) not needed in Rubinius (and actually rb_during_gc not being
+  // defined prevents this extension from compiling otherwise).
   delete b_sn;
 }
 
